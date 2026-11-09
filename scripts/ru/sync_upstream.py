@@ -42,8 +42,8 @@ def github_call(method: str, endpoint: str, fields: dict | None = None) -> dict:
 def synchronize(api: Callable = github_call) -> str:
     """Продвигает удалённую maintainer только по прямому продолжению истории и возвращает SHA.
 
-    При совпадении SHA ничего не записывает. Иначе проверяет merge base — общий
-    коммит истории — и выполняет PATCH с force=False, затем подтверждает GET.
+    При совпадении SHA ничего не записывает. Иначе проверяет цепочку родителей
+    upstream и выполняет PATCH с force=False, затем подтверждает GET.
     api можно подменить тестовой функцией; это исключает реальные записи GitHub в тестах.
     """
     target = api("GET", f"repos/{UPSTREAM}/git/ref/heads/main")["object"]["sha"]
@@ -52,14 +52,37 @@ def synchronize(api: Callable = github_call) -> str:
         raise ValueError("Получен некорректный SHA")
     if target == current:
         return target
-    comparison = api("GET", f"repos/{FORK}/compare/{current}...{target}")
-    if comparison["status"] != "ahead" or comparison["merge_base_commit"]["sha"] != current:
+    if not is_ancestor(api, current, target):
         raise ValueError("maintainer разошёлся с upstream; принудительная синхронизация запрещена")
     api("PATCH", f"repos/{FORK}/git/refs/heads/maintainer", {"sha": target, "force": False})
     confirmed = api("GET", f"repos/{FORK}/git/ref/heads/maintainer")["object"]["sha"]
     if confirmed != target:
         raise ValueError("Продвижение maintainer не подтверждено")
     return confirmed
+
+
+def is_ancestor(api: Callable, current: str, target: str) -> bool:
+    """Ищет current среди родителей target без построения diff многомиллионных списков.
+
+    Обходит все родительские ветви merge-коммитов. Не более 128 запросов:
+    слишком большое отставание требует ручного разбора, а не бесконечного обхода.
+    Повреждённые SHA и превышение лимита останавливают обновление до PATCH.
+    """
+    pending, visited = [target], set()
+    while pending:
+        sha = pending.pop()
+        if not re.fullmatch(r"[0-9a-f]{40}", sha):
+            raise ValueError("Некорректный SHA родительского коммита")
+        if sha == current:
+            return True
+        if sha in visited:
+            continue
+        if len(visited) >= 128:
+            raise ValueError("Для проверки родства требуется больше 128 коммитов")
+        visited.add(sha)
+        commit = api("GET", f"repos/{UPSTREAM}/git/commits/{sha}")
+        pending.extend(parent["sha"] for parent in commit["parents"])
+    return False
 
 
 if __name__ == "__main__":
