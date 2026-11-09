@@ -83,8 +83,16 @@ class IPRegexTests(unittest.TestCase):
                 values.extend(v for v in [lo - 1, hi + 1] if 0 <= v < 2**128)
                 for value in values:
                     address = ipaddress.IPv6Address(value)
+                    text = str(address)
+                    if address.ipv4_mapped is not None:
+                        # Проверяем 128-битный диапазон в шестнадцатеричной записи.
+                        # str() некоторых версий Python возвращает смешанную запись
+                        # ::ffff:255.255.255.255; она не является входом IPv6-regex.
+                        # Адрес сохраняем в выборке, не пропуская пограничный случай.
+                        text = f"::ffff:{(value >> 16) & 0xFFFF:x}:{value & 0xFFFF:x}"
+                        self.assertEqual(ipaddress.IPv6Address(text), address)
                     self.assertEqual(
-                        bool(pattern.fullmatch(str(address))),
+                        bool(pattern.fullmatch(text)),
                         address in network,
                         (network, address),
                     )
