@@ -1,1 +1,65 @@
-.vscode/
+# Локальные настройки редакторов; общие рекомендации и примеры можно хранить в Git.
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+*.swo
+*.swn
+*~
+.~lock.*#
+
+# Локальные настройки и рабочие файлы агентов; корневой AGENTS.md остаётся в Git.
+.claude/
+.codex/
+.cursor/
+
+# Окружения Python, байткод и кэши используемых инструментов.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+.ruff_cache/
+.uv-cache/
+
+# Локальные переменные окружения и ключи; примеры настроек не скрываем.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+local-secrets/
+
+# Журналы, PID процессов и временные копии файлов.
+*.log
+logs/
+*.pid
+*.pid.lock
+tmp/
+.tmp/
+*.tmp
+*.bak
+
+# Служебные файлы macOS, Windows и Linux.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Личный план и рабочие заметки; .ignore сохраняет доступ к info/ в поиске Codex.
+info/
+BACKLOG.md
+
+# output/ содержит публикуемые фильтры, build — исполняемый скрипт проекта.
+# Эти пути остаются доступными для Git.

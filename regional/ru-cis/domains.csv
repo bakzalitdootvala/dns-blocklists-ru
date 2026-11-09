@@ -1,0 +1,65 @@
+domain,category,scope,evidence_url,reviewed_on,requires_feed,reason,additional_evidence_url
+mc.yandex.ru,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.com,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.by,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.kz,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.uz,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.com.am,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.yandex.com.ge,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.webvisor.com,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+mc.webvisor.org,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-08,,,
+report.appmetrica.yandex.net,privacy,exact,https://yandex.ru/support/yandex-360/business/admin/ru/network-settings,2026-11-08,,,
+top-fwz1.mail.ru,privacy,exact,https://top.mail.ru/help/ru/code/https,2026-11-08,,,
+ads.adfox.ru,adblock,exact,https://yandex.com/support/adfox/en/banners/pixel1x1,2026-11-08,,,
+ad.adriver.ru,adblock,exact,https://www.adriver.ru/doc/pub/solutions/regional-codes/,2026-11-08,,,
+sibtel.adriver.ru,adblock,exact,https://www.adriver.ru/doc/pub/solutions/regional-codes/,2026-11-08,,,
+yandexadexchange.net,adblock,suffix,https://www.yandex.ru/support/partner/ru/web/adplatform/csp-configuration,2026-11-08,,,
+ligastavok.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+winline.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+fon.bet,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+leon.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+olimp.bet,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+betcity.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+pari.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+betboom.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+melbet.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+marathonbet.ru,gambling,suffix,https://1cupis.ru/info/partners/,2026-11-08,,,
+orderapiserver.info,malware,exact,https://securelist.com/armored-likho-still-toolkit/121033/,2026-11-08,hagezi-tif,,
+tg4service.com,malware,exact,https://securelist.com/armored-likho-still-toolkit/121033/,2026-11-08,hagezi-tif,,
+srwinservice.com,malware,exact,https://securelist.com/armored-likho-still-toolkit/121033/,2026-11-08,hagezi-tif,,
+screenserv.com,malware,exact,https://securelist.com/armored-likho-still-toolkit/121033/,2026-11-08,hagezi-tif,,
+mc.yandex.az,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.co.il,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.com.tr,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.ee,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.fr,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.kg,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.lt,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.lv,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.md,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.tj,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+mc.yandex.tm,privacy,exact,https://yandex.ru/support/metrica/ru/code/install-counter-csp,2026-11-09,,,
+c.zero.kz,privacy,exact,https://zero.kz/,2026-11-09,,,
+topaz.az,gambling,suffix,https://topaz.az/about,2026-11-09,,,
+7777.md,gambling,suffix,https://7777.md/?lang=ro,2026-11-09,,,
+dsp.soloway.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Поставщик рекламных показов Soloway,https://www.adriver.ru/about/privacy-en/
+media.soloway.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Доставка рекламных материалов Soloway,https://www.adriver.ru/about/privacy-en/
+pb.soloway.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Рекламная инфраструктура Soloway; точная роль хоста не опубликована,https://www.adriver.ru/about/privacy-en/
+bs-metadsp.yandex.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Рекламная инфраструктура Yango/Яндекс из реестра поставщиков Google,https://yandex.ru/support/partner/ru/web/adplatform/csp-configuration
+d.mradx.net,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,"Доставка рекламы Mail.ru, mradx.net отмечен в Tracking Protection",https://github.com/AdguardTeam/AdguardFilters/blob/516775bc33c7e5ae5a9a2ba6f67dde7d6ccbf49d/SpywareFilter/sections/tracking_servers.txt#L205
+r.mradx.net,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,"Рекламные материалы Mail.ru, отдельные пути подтверждены RussianFilter",https://github.com/AdguardTeam/AdguardFilters/blob/516775bc33c7e5ae5a9a2ba6f67dde7d6ccbf49d/CyrillicFilters/RussianFilter/sections/specific.txt#L9711
+rtb-moscow.mail.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Рекламная инфраструктура Mail.ru из реестра поставщиков Google,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv
+content.hybrid.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Доставка рекламных материалов Hybrid,https://hybrid.ai/data_protection_policy/
+dsp.rambler.ru,adblock,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Рекламная инфраструктура Rambler DSP,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv
+bsd.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+cr.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+cs.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+idsync.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+rd.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+redirect.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+wam-google.solution.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+wf.frontend.weborama.fr,privacy,exact,https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv,2026-11-09,,Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google,https://www.weborama.com/privacy
+privacy-cs.mail.ru,privacy,exact,https://top.mail.ru/help/ru/code/csp,2026-11-09,,Приём данных и загрузка модулей счётчика Рейтинг Mail.ru,
+tag.rutarget.ru,privacy,exact,https://www.uiscom.ru/academiya/spravochnyj-centr/integratsiya-s-servisami-avtomatizatsii-kontekstnoy-reklamy/segmento/,2026-11-09,,Передача рекламной платформе событий по HTTP GET из интеграции UIS,
+nolix.ru,adblock,exact,https://nolix.ru/,2026-11-09,,Рекламные строчки и Nolix Bar на сайтах издателей,https://github.com/easylist/ruadlist/blob/95f0a7d0c7701e3b6bd9d1bc454c7ed13a1a0c80/advblock/adservers.txt#L4303
+etarg.network,adblock,exact,https://etarg.network/,2026-11-09,,"Тизерная сеть, ретаргетинг и учётные пиксели",https://github.com/easylist/ruadlist/blob/95f0a7d0c7701e3b6bd9d1bc454c7ed13a1a0c80/advblock/adservers.txt#L7612

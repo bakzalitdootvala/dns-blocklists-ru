@@ -1,0 +1,317 @@
+{
+  "_description": "Происхождение вручную проверенных рекламных/статистических hostname. Это справочные факты, не самостоятельный фильтр; правила лежат в domains.csv. Google providers.csv подтверждает связь с рекламным оператором, не является списком вредоносных сайтов. Международные Weborama/Hybrid не объявляются российскими компаниями. CNAME — другое имя в DNS-ответе; оно может уже блокироваться базой.",
+  "checked_on": "2026-11-09",
+  "google_providers_sha256": "b2c053c67ca1f5d69b28c8afa4b739394c0a927b2ecc8ffbab0755ac94d64627",
+  "records": [
+    {
+      "domain": "dsp.soloway.ru",
+      "operator": "Adriver",
+      "purpose": "Поставщик рекламных показов Soloway",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.adriver.ru/about/privacy-en/",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.adriver.ru",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "media.soloway.ru",
+      "operator": "Adriver",
+      "purpose": "Доставка рекламных материалов Soloway",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.adriver.ru/about/privacy-en/",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.adriver.ru",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "pb.soloway.ru",
+      "operator": "Adriver",
+      "purpose": "Рекламная инфраструктура Soloway; точная роль хоста не опубликована",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.adriver.ru/about/privacy-en/",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.adriver.ru",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "bs-metadsp.yandex.ru",
+      "operator": "Yango",
+      "purpose": "Рекламная инфраструктура Yango/Яндекс из реестра поставщиков Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://yandex.ru/support/partner/ru/web/adplatform/csp-configuration",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "d.mradx.net",
+      "operator": "Mail.ru",
+      "purpose": "Доставка рекламы Mail.ru, mradx.net отмечен в Tracking Protection",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://github.com/AdguardTeam/AdguardFilters/blob/516775bc33c7e5ae5a9a2ba6f67dde7d6ccbf49d/SpywareFilter/sections/tracking_servers.txt#L205",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "mail.ru;e.mail.ru;id.vk.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "r.mradx.net",
+      "operator": "Mail.ru",
+      "purpose": "Рекламные материалы Mail.ru, отдельные пути подтверждены RussianFilter",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://github.com/AdguardTeam/AdguardFilters/blob/516775bc33c7e5ae5a9a2ba6f67dde7d6ccbf49d/CyrillicFilters/RussianFilter/sections/specific.txt#L9711",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "mail.ru;e.mail.ru;vk.com;vkvideo.ru",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "rtb-moscow.mail.ru",
+      "operator": "Mail.ru",
+      "purpose": "Рекламная инфраструктура Mail.ru из реестра поставщиков Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "mail.ru;e.mail.ru;id.vk.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "content.hybrid.ru",
+      "operator": "hybrid.ai",
+      "purpose": "Доставка рекламных материалов Hybrid",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://hybrid.ai/data_protection_policy/",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "hybrid.ai",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "dsp.rambler.ru",
+      "operator": "Rambler",
+      "purpose": "Рекламная инфраструктура Rambler DSP",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "rambler.ru;mail.rambler.ru;id.rambler.ru",
+      "base_blocked_cname": "dsp.ad-tech.ru"
+    },
+    {
+      "domain": "bsd.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "cr.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "cs.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "idsync.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "rd.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "redirect.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "wam-google.solution.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "wf.frontend.weborama.fr",
+      "operator": "Weborama",
+      "purpose": "Weborama: идентификаторы рекламной аудитории и статистика; точное имя опубликовано Google",
+      "evidence_url": "https://storage.googleapis.com/adx-rtb-dictionaries/providers.csv",
+      "second_evidence_url": "https://www.weborama.com/privacy",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "www.weborama.com;client.weborama.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "mc.yandex.az",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.co.il",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.com.tr",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.ee",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.fr",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.kg",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.lt",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.lv",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.tj",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "mc.yandex.tm",
+      "operator": "Яндекс",
+      "purpose": "Приём данных счётчика Яндекс Метрика",
+      "evidence_url": "https://yandex.ru/support/metrica/ru/code/install-counter-csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "yandex.ru;passport.yandex.ru;yastatic.net",
+      "base_blocked_cname": "mc.yandex.ru"
+    },
+    {
+      "domain": "privacy-cs.mail.ru",
+      "operator": "VK / Рейтинг Mail.ru",
+      "purpose": "Приём данных и загрузка модулей счётчика Рейтинг Mail.ru",
+      "evidence_url": "https://top.mail.ru/help/ru/code/csp",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "mail.ru;e.mail.ru;id.vk.com",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "tag.rutarget.ru",
+      "operator": "Segmento / Rutarget",
+      "purpose": "Передача рекламной платформе событий по HTTP GET из интеграции UIS",
+      "evidence_url": "https://www.uiscom.ru/academiya/spravochnyj-centr/integratsiya-s-servisami-avtomatizatsii-kontekstnoy-reklamy/segmento/",
+      "second_evidence_url": "",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "segmento.ru",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "nolix.ru",
+      "operator": "nolix.ru",
+      "purpose": "Рекламные строчки и Nolix Bar на сайтах издателей",
+      "evidence_url": "https://nolix.ru/",
+      "second_evidence_url": "https://github.com/easylist/ruadlist/blob/95f0a7d0c7701e3b6bd9d1bc454c7ed13a1a0c80/advblock/adservers.txt#L4303",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "ordinary_publisher_login_payment_video; operator_console_will_be_blocked",
+      "base_blocked_cname": ""
+    },
+    {
+      "domain": "etarg.network",
+      "operator": "etarg.network",
+      "purpose": "Тизерная сеть, ретаргетинг и учётные пиксели",
+      "evidence_url": "https://etarg.network/",
+      "second_evidence_url": "https://github.com/easylist/ruadlist/blob/95f0a7d0c7701e3b6bd9d1bc454c7ed13a1a0c80/advblock/adservers.txt#L7612",
+      "reviewed_on": "2026-11-09",
+      "normal_controls": "ordinary_publisher_login_payment_video; operator_console_will_be_blocked",
+      "base_blocked_cname": ""
+    }
+  ]
+}

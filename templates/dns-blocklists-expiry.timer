@@ -1,0 +1,14 @@
+# Проверяет срок в начале каждого дня UTC и через две минуты после загрузки.
+# Persistent запускает пропущенную проверку после включения сервера.
+[Unit]
+Description=Ежедневная проверка срока региональных C2-правил
+
+[Timer]
+OnCalendar=*-*-* 00:00:00 UTC
+OnBootSec=2min
+Persistent=true
+AccuracySec=1min
+Unit=dns-blocklists-expiry.service
+
+[Install]
+WantedBy=timers.target

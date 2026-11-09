@@ -1,0 +1,26 @@
+# For Codex, don't delete.
+!/.github/
+!/.github/**
+!/config/
+!/config/**
+!/docs/
+!/docs/**
+!/info/
+!/info/**
+!/BACKLOG.md
+!/output/
+!/output/**
+!/regional/
+!/regional/**
+!/scripts/
+!/scripts/**
+!/templates/
+!/templates/**
+!/tests/
+!/tests/**
+
+**/__pycache__/
+**/.venv/
+**/node_modules/
+**/.cache/
+**/.ruff_cache/

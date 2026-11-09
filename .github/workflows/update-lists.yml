@@ -1,0 +1,95 @@
+# Назначение: выпустить новый combined.txt с доменными и IP-правилами.
+# Запуск: ежедневно в 06:23 UTC (09:23 по Москве) или вручную через workflow_dispatch.
+# Работает только в bakzalitdootvala/dns-blocklists-ru; две публикации не идут одновременно.
+# Сначала проверяет код, затем обновляет удалённую maintainer до upstream main без force.
+# Получает все обязательные источники Mullvad/HaGeZi/Spamhaus и проверяет DROP через ClamAV.
+# Проверяет возраст, SHA256, размеры и контрольные домены; собирает output/adguard/
+# и output/threat-intel/. Живой изолированный AdGuard проверяет DNS-блокировки и разрешённые имена.
+# Только после успеха создаёт commit от github-actions[bot] и отправляет результаты в main.
+# При ошибке новый фильтр в main не публикуется; maintainer может уже быть синхронизирован.
+# Job не входит по SSH на VPS и не меняет его конфиг. Получение обновлений DNS-сервером
+# настраивается отдельно через источник фильтра. Термины: docs/GLOSSARY.md.
+name: Обновить источники и опубликовать DNS-фильтр после проверки AdGuard
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dns-blocklists-ru-publish
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Обновить maintainer, собрать фильтр, проверить DNS и опубликовать данные
+    if: github.repository == 'bakzalitdootvala/dns-blocklists-ru'
+    runs-on: ubuntu-24.04
+    env:
+      # github.token создаётся GitHub для этого запуска; локальный .env не нужен.
+      # gh читает GH_TOKEN, полномочия ограничены permissions данного workflow.
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Скачать main, куда будут записаны проверенные результаты
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - name: Установить Python 3.12 для загрузки, сборки и проверок
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Выполнить тесты и проверить каталог до обновления данных
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/ru/pipeline.py validate
+      - name: Продвинуть maintainer до main Mullvad без переписывания истории
+        run: python scripts/ru/sync_upstream.py
+      - name: Установить ClamAV и dig, обновить антивирусные сигнатуры
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clamav dnsutils
+          sudo systemctl stop clamav-freshclam || true
+          sudo freshclam
+      - name: Скачать домены и IP Mullvad, HaGeZi, Spamhaus; проверить DROP ClamAV
+        run: |
+          python scripts/ru/pipeline.py refresh
+          python scripts/ru/threat_intel.py refresh-ips
+          python scripts/ru/download_drop.py .cache/drop
+          clamscan --infected .cache/drop
+      - name: Проверить источники, собрать combined.txt и сверить его манифест
+        run: |
+          python scripts/ru/threat_intel.py build-ips
+          python scripts/ru/threat_intel.py build-drop --input-dir .cache/drop
+          python scripts/ru/pipeline.py build
+          python scripts/ru/check_artifact.py
+      - name: Скачать AdGuard 0.107.80, проверить SHA256 и ClamAV перед запуском
+        run: |
+          mkdir -p .cache/adguard
+          curl --fail --silent --show-error --location --max-time 120 https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.80/AdGuardHome_linux_amd64.tar.gz -o .cache/adguard/release.tar.gz
+          echo '28593bc761d71469abdbc6f39ca42cbed763ec92b63082c729177b037ed51d18  .cache/adguard/release.tar.gz' | sha256sum -c -
+          clamscan --infected .cache/adguard/release.tar.gz
+          python - <<'PYEXTRACT'
+          import pathlib, tarfile
+          with tarfile.open('.cache/adguard/release.tar.gz') as archive:
+              member = archive.getmember('AdGuardHome/AdGuardHome')
+              if not member.isfile() or member.size > 100_000_000:
+                  raise ValueError('Недопустимый бинарник в архиве')
+              binary = pathlib.Path('.cache/adguard/AdGuardHome')
+              binary.write_bytes(archive.extractfile(member).read())
+              binary.chmod(0o755)
+          PYEXTRACT
+          echo '6943f0492e0d6d495d5017047f7ac57624b321a5942f5a60ec49a3ca67caf0f1  .cache/adguard/AdGuardHome' | sha256sum -c -
+      - name: Проверить IP-ответы и контрольные домены на отдельном AdGuard
+        run: python scripts/ru/test_ip_response.py --binary .cache/adguard/AdGuardHome --root . --ordinary-controls --report .cache/ip-response-report.json
+      - name: Создать commit с output/adguard и output/threat-intel и отправить в main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add output/adguard output/threat-intel
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update source lists and generated filters'
+            git push origin HEAD:main
+          fi

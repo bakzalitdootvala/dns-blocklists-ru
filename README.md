@@ -1,97 +1,163 @@
-# dns-blocklists
+<h1 align="center">🛡️ dns-blocklists-ru</h1>
 
-> [!WARNING]
-> Our public encrypted DNS servers were shut down on November 2, 2026. Read more about this on our [blog](https://mullvad.net/blog/shutting-down-our-public-encrypted-dns-servers-and-sponsoring-quad9-instead)
-> This means our .mobileconfig files have stopped working and [that repository](https://github.com/mullvad/encrypted-dns-profiles) has been archived. 
+<p align="center">
+  <strong>DNS-фильтр для AdGuard Home с дополнениями для России и СНГ</strong>
+</p>
 
-This repository contains the Ansible playbook that we use to generate DNS based blocking files for VPN server __(also known as VPN relay)__ based DNS blocking.
+<p align="center">
+  <a href="BUILDING.md"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python: 3.10+"></a>
+  <a href="docs/GLOSSARY.md#adguard-home-и-adguard-dns"><img src="https://img.shields.io/badge/AdGuard%20Home-DNS-68BC71?style=flat-square&amp;logo=adguard&amp;logoColor=white" alt="AdGuard Home: DNS"></a>
+  <a href="docs/GLOSSARY.md#ip-ipv4-ipv6-октет-и-16-битная-группа"><img src="https://img.shields.io/badge/IP-IPv4%20%2B%20IPv6-0891B2?style=flat-square" alt="IP: IPv4 + IPv6"></a>
+  <a href="https://github.com/mullvad/dns-blocklists"><img src="https://img.shields.io/badge/Mullvad-upstream-D9A441?style=flat-square&amp;logo=mullvad&amp;logoColor=white" alt="Mullvad: upstream"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/%D0%9A%D0%BE%D0%B4-GPLv3-64748B?style=flat-square" alt="Код: GPLv3"></a>
+</p>
 
-We aim to update these lists every Monday through Thursday. You can view the latest update by selecting the commits to this repository.
+<p align="center">
+  <a href="COMBINATIONS.md"><img src="https://img.shields.io/badge/%D0%91%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D0%BC-%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D1%83-2563EB?style=flat-square" alt="Блокируем: рекламу"></a>
+  <a href="COMBINATIONS.md"><img src="https://img.shields.io/badge/%D0%91%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D0%BC-%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80%D1%8B-7C3AED?style=flat-square" alt="Блокируем: трекеры"></a>
+  <a href="COMBINATIONS.md"><img src="https://img.shields.io/badge/%D0%91%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D0%BC-malware-DC2626?style=flat-square" alt="Блокируем: malware"></a>
+  <a href="COMBINATIONS.md"><img src="https://img.shields.io/badge/%D0%91%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D1%83%D0%B5%D0%BC-%D0%B0%D0%B7%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%B3%D1%80%D1%8B-D97706?style=flat-square" alt="Блокируем: азартные игры"></a>
+</p>
 
-After updating the lists, it will take about an hour for all our servers to pick up the updated lists. However every VPN server has a 24 hour cache timeout.
+<p align="center">
+  <a href="#connect">Подключение</a> ·
+  <a href="COMBINATIONS.md">Категории</a> ·
+  <a href="docs/REGIONAL_COVERAGE.md">Покрытие регионов</a> ·
+  <a href="BUILDING.md">Сборка</a> ·
+  <a href="docs/GLOSSARY.md">Глоссарий</a>
+</p>
 
-Lists updated at 07:00 will be *made available* at the latest 09:00 on the same day, but may not be consumed and applied until 24 hours later.
+---
 
-## Pull requests / Issues / Updating block lists
+Этот проект собирает фильтр, по которому AdGuard Home блокирует рекламу, трекеры,
+вредоносные домены и азартные игры. Основа — готовые списки
+[Mullvad DNS blocklists](https://github.com/mullvad/dns-blocklists), к которым
+мы добавляем правила для России и СНГ и проверку IP из HaGeZi TIF и Spamhaus DROP.
+Взрослый контент и социальные сети не включены в запрещённые категории.
+Рекламный или вредоносный домен может блокироваться независимо от тематики сайта,
+который к нему обращается.
 
-We prefer to not block individual custom URLs or add block lists without them being fully validated and verified first.
+Начните с [глоссария терминов с примерами](docs/GLOSSARY.md).
+В каждом содержательном каталоге есть собственный README с назначением файлов.
 
-Please consider pointing us toward a reputable block list prior to making a Github Issue. 
+<a id="connect"></a>
 
-If we close your issue or reject your request, it is most likely down to us not having a way of verifying that the block list is trustworthy.
+## Подключение к AdGuard Home
 
-# Custom DNS entries for use with our VPN service
+Готовый файл находится в `output/adguard/combined.txt`. Для подключения
+опубликованной версии добавьте следующий URL в «Фильтры → DNS-чёрные списки»;
+перед подключением убедитесь, что по нему доступен файл:
 
-All combinations of DNS content blockers can be found in the [COMBINATIONS.md](COMBINATIONS.md) file.
+```text
+https://raw.githubusercontent.com/bakzalitdootvala/dns-blocklists-ru/main/output/adguard/combined.txt
+```
 
-# Lists
+Файл содержит доменные правила и правила проверки IP в DNS-ответах.
+Например, неизвестный домен отвечает адресом из Spamhaus DROP — AdGuard
+возвращает ответ блокировки вместо этого адреса. CIDR обозначает диапазон IP;
+сборщик преобразует его в одно регулярное выражение без перечисления всей сети.
+`output/threat-intel/` хранит исходные сетевые наборы и сведения об их происхождении.
+Правила firewall не изменяются. Прямое подключение по IP DNS-фильтр не остановит.
 
-The following lists are what we import to our service. You can find these defined in `inventory/group_vars` for the server type you wish to view.
+Обновление фильтра проверяет контрольные домены и останавливается при ошибках.
+Последний проверенный файл сохраняется; неудачный запуск виден в GitHub Actions.
+Возраст опубликованного снимка указан в `output/adguard/manifest.json`.
+Если он превышает 48 часов, проверьте workflow «Обновить источники и опубликовать DNS-фильтр после проверки AdGuard».
 
-- `relay`: VPN servers (relays)
+## Ветки и обновления
 
-### Advertising
+- `maintainer` — точная копия `main` официального `mullvad/dns-blocklists`.
+  Обновляется только fast-forward; собственные коммиты в неё не добавляются.
+- `main` — пользовательская ветка по умолчанию: русская документация,
+  сборщик, региональный каталог, проверки и готовые фильтры.
 
-We currently use these advertising blocklists with our service:
-- oisd-small: https://small.oisd.nl/rpz
-- frellwits-swedish-hosts-file: https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Hosts-File.txt
-- AdguardDNS: https://v.firebog.net/hosts/AdguardDNS.txt
-- hagezi-popupads-onlydomains: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/popupads.txt
-- mullvad-ads-blocklist: custom file
-- adguard-filters-mobile: https://adguardteam.github.io/AdguardFilters/MobileFilter/sections/adservers.txt
-### Trackers
+В workflow ветки `main` задан ежедневный запуск в 06:23 UTC. Он обновляет `maintainer`,
+получает доменные и IP-данные, проверяет их свежесть и SHA256, собирает
+единый фильтр, проверяет его на живом AdGuard Home и публикует результат.
+Ошибка любого обязательного источника или теста останавливает публикацию.
+Синхронизация ветки и сборка выполняются в одном задании; изменение указателя
+ветки (ref) не используется как способ запустить другое задание.
 
-We currently use these tracker blocklists with our service:
-- firebog-easylist-privacy: https://v.firebog.net/hosts/Easyprivacy.txt
-- hagezi-tracker-amazon: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.amazon.txt
-- hagezi-tracker-apple: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.apple.txt
-- hagezi-tracker-huawei: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.huawei.txt
-- hagezi-tracker-windows: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.winoffice.txt
-- hagezi-tracker-tiktok-aggressive: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.tiktok.extended.txt
-- hagezi-tracker-webos: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.lgwebos.txt
-- hagezi-tracker-vivo: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.vivo.txt
-- hagezi-tracker-oppo: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.oppo-realme.txt
-- hagezi-tracker-xiaomi: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.xiaomi.txt
-- mullvad-tracker-blocklist: custom file
+<details>
+<summary><strong>Откуда сборщик получает данные Mullvad</strong></summary>
 
-### Malware
+Актуальные исходники оригинальной сборки доступны в ветке `maintainer`.
+Собственная сборка использует готовые данные из свежего SHA этой ветки;
+исполняемый код upstream автоматически в `main` не сливается.
+Сборщик скачивает готовые списки из удалённого репозитория Mullvad по путям
+`output/relay/`, указанным в `config/sources.json`, и сохраняет снимки в `.cache/feeds/`.
+Готовый фильтр: `output/adguard/`; команды описаны в [BUILDING.md](BUILDING.md).
 
-We currently use these malware blocklists with our service:
-- mullvad-malware-blocklist: custom file
-- urlhaus: https://urlhaus.abuse.ch/downloads/hostfile
-- hagezi-threat-intelligence-mini: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/rpz/tif.mini.txt
+</details>
 
-### Adult content 
+## Источники
 
-We currently use this Adult content blocklist for our service:
-- oisd-nsfw: https://nsfw.oisd.nl/rpz
-- mullvad-adult-blocklist: custom file
+- Четыре опубликованные категории Mullvad: `adblock`, `privacy`, `malware`, `gambling`.
+- HaGeZi TIF — глобальные malware, phishing и scam-домены.
+- `regional/ru-cis/domains.csv` — региональные правила со ссылками на доказательства.
+- `regional/ru-cis/recent-threats.json` — точные C2 из свежих первичных отчётов на 30 суток.
+  [Региональное покрытие и настройка снятия срока](docs/REGIONAL_COVERAGE.md).
+- HaGeZi TIF IP и Spamhaus DROP — адреса и сети для проверки DNS-ответов.
 
-### Gambling
+[Происхождение, лицензии и ограничения](docs/SOURCES.md) ·
+[Региональные данные](regional/ru-cis/README.md) ·
+[Сборка и проверки](BUILDING.md) · [Профиль категорий](COMBINATIONS.md).
 
-We currently use these gambling blocklists with our service:
-- hagezi-gambling-onlydomains: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/gambling-onlydomains.txt
-- hagezi-gambling: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/gambling.txt
+Один голый домен сохраняется как точное правило; пара домен/wildcard объединяется
+без расширения исходной области. Контекстные браузерные правила с URL-путями,
+`$third-party`, `$domain` и косметическими селекторами не преобразуются в
+безусловные DNS-запреты нашим сборщиком. Готовые результаты Mullvad считаются
+опубликованной DNS-политикой upstream: удалённые при их исходной сборке условия
+восстановить невозможно.
 
-### Social media
+## Границы защиты
 
-We generate our Social Media block lists from scripts located in `scripts/`
+DNS-фильтр проверяет имена в DNS-запросах и адреса в DNS-ответах.
+Если один ответ содержит разрешённый и запрещённый адрес, AdGuard блокирует
+ответ целиком. Точное доменное исключение разрешает ответ для этого имени.
+Он не анализирует содержимое HTTPS, не блокирует прямые подключения по IP
+и не гарантирует фильтрацию собственного DNS браузера или приложения.
 
-You can find the generated file in `files/social`
+Контрольные домены проверяют выбранные сценарии, а не все сайты интернета.
+Рекламные блоки, авторизация, видео и другие части сайта могут зависеть от
+дополнительных доменов. Ложную блокировку сообщайте через Issues со ссылкой
+на правило и домен; не публикуйте пароли, клиентские UUID и историю посещений.
 
-# Why is list "X" not included?
+География домена, IP или владельца не является основанием для блокировки.
+Каталог не обещает полного перечня всех вредоносных адресов мира.
 
-If you find a block list is excluded it is because we have gone through these validation steps:
-- The blocklist is an amalgamation of other blocklists.
-- The blocklist is no longer maintained.
-- The blocklist blocks things we do not believe should be blocked (like our own domains).
+## Лицензии
 
-We periodically make exceptions to the included URLs for the following reasons:
-- The upstream lists are broken and include malformed URLs causing the generation to fail.
-- The upstream lists block our domains.
-- You can view exceptions in `inventory/group_vars/all.yml` under the name of `dns_blocklists_exclude`,
-  these are split per-blocklist.
+Код и применимые доменные списки распространяются по GPL-3.0 с сохранением
+уведомлений исходных проектов. Данные Spamhaus имеют собственные условия:
+название источника, copyright и исходные дата/время сохранены в каждом файле.
+[LICENSE.md](LICENSE.md) и [реестр источников](docs/SOURCES.md) описывают границы.
 
-# Building
 
-Information for building these blocklists has been moved to [BUILDING.md](BUILDING.md).
+## Карта репозитория
+
+| Каталог | Что открыть и зачем |
+|---|---|
+| [.github/](.github/README.md) | Автоматические задания и формы обращений |
+| [config/](config/README.md) | Источники, ограничения, контрольные имена и PSL |
+| [docs/](docs/README.md) | Глоссарий, происхождение данных и результаты проверок |
+| [regional/](regional/README.md) | Региональные домены, исключения, C2-отчёты и доказательства |
+| [scripts/](scripts/README.md) | Скрипты; в ru/ находится собственный сборщик |
+| [tests/](tests/README.md) | Поведенческие проверки сборщика и защит |
+| [output/](output/README.md) | Готовый AdGuard-фильтр и проверенные IP-источники |
+| [templates/](templates/README.md) | Systemd service и timer для снятия срока C2 |
+
+<details>
+<summary><strong>Корневые файлы и локальные рабочие каталоги</strong></summary>
+
+Корневой `build` обновляет источники и собирает профиль; `Makefile` объединяет
+команды разработки. `BUILDING.md` описывает их запуск, `COMBINATIONS.md` — категории,
+`AGENTS.md` — правила работы агента, `LICENSE.md` — лицензию.
+`requirements-dev.txt` закрепляет Ruff, `pyproject.toml` задаёт его настройки.
+`.pre-commit-config.yaml` описывает проверки перед коммитом, `.gitleaks.toml` —
+настройки поиска секретов. `.gitignore` исключает служебные файлы из Git,
+`.ignore` уточняет поиск локальных материалов агентом. Локальный `info/` содержит
+личный план и не публикуется; `.cache/`, `.venv/`, `.ruff_cache/`, `__pycache__/`
+и `.git/` служебные и не требуют README внутри каждого вложенного каталога.
+
+</details>

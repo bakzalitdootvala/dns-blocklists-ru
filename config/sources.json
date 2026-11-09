@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "mullvad/dns-blocklists",
+  "mirror_repository": "bakzalitdootvala/dns-blocklists-ru",
+  "mirror_branch": "maintainer",
+  "categories": [
+    "adblock",
+    "privacy",
+    "malware",
+    "gambling"
+  ],
+  "maximum_source_age_hours": 168,
+  "maximum_build_age_hours": 48,
+  "sources": [
+    {
+      "id": "mullvad-adblock",
+      "repository": "mullvad/dns-blocklists",
+      "ref": "main",
+      "path": "output/relay/relay_adblock.txt",
+      "format": "mullvad",
+      "category": "adblock",
+      "minimum_rules": 100000,
+      "maximum_bytes": 30000000,
+      "license": "GPL-3.0"
+    },
+    {
+      "id": "mullvad-privacy",
+      "repository": "mullvad/dns-blocklists",
+      "ref": "main",
+      "path": "output/relay/relay_privacy.txt",
+      "format": "mullvad",
+      "category": "privacy",
+      "minimum_rules": 10000,
+      "maximum_bytes": 10000000,
+      "license": "GPL-3.0"
+    },
+    {
+      "id": "mullvad-malware",
+      "repository": "mullvad/dns-blocklists",
+      "ref": "main",
+      "path": "output/relay/relay_malware.txt",
+      "format": "mullvad",
+      "category": "malware",
+      "minimum_rules": 7,
+      "maximum_bytes": 10000000,
+      "license": "GPL-3.0"
+    },
+    {
+      "id": "mullvad-gambling",
+      "repository": "mullvad/dns-blocklists",
+      "ref": "main",
+      "path": "output/relay/relay_gambling.txt",
+      "format": "mullvad",
+      "category": "gambling",
+      "minimum_rules": 500000,
+      "maximum_bytes": 60000000,
+      "license": "GPL-3.0"
+    },
+    {
+      "id": "hagezi-tif",
+      "repository": "hagezi/dns-blocklists",
+      "ref": "main",
+      "path": "adblock/tif.txt",
+      "format": "adguard",
+      "category": "malware",
+      "minimum_rules": 500000,
+      "maximum_bytes": 90000000,
+      "license": "GPL-3.0"
+    }
+  ],
+  "ip_sources": [
+    {
+      "id": "hagezi-ips",
+      "repository": "hagezi/dns-blocklists",
+      "ref": "main",
+      "path": "ips/tif.txt",
+      "format": "ip",
+      "category": "malware",
+      "minimum_rules": 1000,
+      "maximum_bytes": 5000000,
+      "license": "GPL-3.0",
+      "enforcement": "dns_response"
+    }
+  ],
+  "maximum_rule_drop_fraction": 0.25
+}

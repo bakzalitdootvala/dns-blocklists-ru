@@ -1,3 +1,20 @@
-#!/bin/bash
-
-ansible-playbook -i inventory playbook.yml
+#!/usr/bin/env bash
+# Собирает локальный combined.txt из актуальных доменных и IP-источников.
+# Запуск: ./build из любого каталога. Требуются Python 3.10+, авторизованный gh
+# и clamscan с заранее обновлённой базой ClamAV. Ветки Git команда не синхронизирует:
+# maintainer должен уже совпадать с upstream main, иначе refresh завершится ошибкой.
+# Порядок: загрузка всех источников -> ClamAV для DROP -> проверка IP -> сборка
+# доменных/IP-правил -> сверка combined.txt с manifest.json. Выход: output/adguard/
+# и output/threat-intel/, кэш загрузок: .cache/. Публикации и подключения к VPS нет.
+# Живой тест AdGuard запускается отдельно; check_artifact проверяет лишь целостность.
+# set -euo pipefail останавливает цепочку при ошибке команды/переменной/конвейера.
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+python3 scripts/ru/pipeline.py refresh
+python3 scripts/ru/threat_intel.py refresh-ips
+python3 scripts/ru/download_drop.py .cache/drop
+clamscan --infected .cache/drop
+python3 scripts/ru/threat_intel.py build-ips
+python3 scripts/ru/threat_intel.py build-drop --input-dir .cache/drop
+python3 scripts/ru/pipeline.py build
+python3 scripts/ru/check_artifact.py

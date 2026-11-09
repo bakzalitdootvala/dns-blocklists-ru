@@ -1,37 +1,26 @@
----
-name: Reporting false positives
-description: This form is to report false positives in our DNS block lists.
-labels: 
-  - bug
-  - report
-  
+name: Ложная блокировка
+description: Обычный сайт или его функция перестали работать из-за фильтра.
+labels: [bug, report]
 body:
-
   - type: markdown
     attributes:
-      value: >
-        Thank you for wanting to help us improve our DNS block lists by reporting issues.
-
-  - type: checkboxes
-    id: reported-upstream
-    attributes:
-      label: Tried reporting upstream already?
-      description: >
-        If the URL you wish to report exists in an upstream block list,
-        ensure you have attempted to contact the repository owner directly.
-      options:
-        - label: I have attempted already, but to no avail.
-          required: true
-
+      value: Укажите конкретный домен и правило. Не публикуйте пароли, токены и историю посещений.
   - type: textarea
-    id: desired-urls
+    id: domain
     attributes:
-      label: What are the desired URLs to be unblocked?
+      label: Какой домен блокируется?
+      description: Домен, категория, совпавшее правило и идентификатор фильтра из AdGuard Home.
     validations:
       required: true
-
   - type: textarea
-    id: additional
+    id: reproduction
     attributes:
-      label: Additional Information
-      description: Is there any additional information that you can provide?
+      label: Как воспроизвести проблему?
+      description: Какое действие должно работать и что происходит с фильтром и без него.
+    validations:
+      required: true
+  - type: textarea
+    id: version
+    attributes:
+      label: Версия данных
+      description: SHA256 и verified_at из manifest.json, версия AdGuard Home.

@@ -1,0 +1,5 @@
+domain,scope,evidence_url,reviewed_on,reason
+yastatic.net,exact,https://yandex.ru/maps-api/docs/js-api/common/connection/csp.html,2026-11-08,Общий CDN ресурсов Яндекса и карт; блокировка всего hostname ломает обычные страницы
+zero.kz,exact,https://zero.kz/,2026-11-09,Главная страница рейтинга и личный кабинет; сбор статистики выделен на c.zero.kz и остаётся запрещённым
+somon.tj,exact,https://somon.tj/,2026-11-09,"Главная страница обычной торговой площадки Таджикистана; точное исключение исправляет блокировку имени в стороннем фильтре, не разрешая поддомены"
+cdntj.somon.tj,exact,https://somon.tj/,2026-11-09,"Изображения объявлений на официальной странице Somon; отдельное имя CDN, без разрешения всех поддоменов"

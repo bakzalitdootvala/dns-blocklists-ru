@@ -1,0 +1,33 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff — ошибки Python
+        language: system
+        entry: .venv/bin/ruff check scripts/ru tests
+        pass_filenames: false
+        always_run: true
+      - id: ruff-format
+        name: Ruff — формат Python
+        language: system
+        entry: .venv/bin/ruff format --check scripts/ru tests
+        pass_filenames: false
+        always_run: true
+      - id: tests
+        name: Тесты сборщика
+        language: system
+        entry: python3 -m unittest discover -s tests -q
+        pass_filenames: false
+        always_run: true
+      - id: data-validation
+        name: Проверка каталога и категорий
+        language: system
+        entry: python3 scripts/ru/pipeline.py validate
+        pass_filenames: false
+        always_run: true
+      - id: gitleaks
+        name: Gitleaks — секреты
+        language: system
+        entry: gitleaks git --pre-commit --staged --redact --no-banner
+        pass_filenames: false
+        always_run: true

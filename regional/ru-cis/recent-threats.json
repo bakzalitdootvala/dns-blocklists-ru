@@ -1,0 +1,65 @@
+{
+  "_description": "Точные C2 (командные серверы вредоносного ПО) из проверенных первичных отчётов. Сборщик применяет их 30 суток от published_on до expires_on (не включая эту дату). last_seen=null означает неизвестную дату последней активности; target_countries — страны жертв, не расположение IP. На установленном сервере expire_filter.py снимает истёкшие блоки.",
+  "reports": [
+    {
+      "id": "arra-ghouls-20261109",
+      "evidence_url": "https://securelist.ru/tr/new-cyber-threat-arra-ghouls-attacks-russian-organizations/117588/",
+      "published_on": "2026-11-09",
+      "expires_on": "2026-12-09",
+      "target_countries": [
+        "RU",
+        "BY"
+      ],
+      "last_seen": null,
+      "role": "C2 — серверы управления вредоносными программами по перечню Securelist",
+      "domains": [
+        "max-telemetry.online",
+        "order.50perfume.ru",
+        "update-yandexbrowser.ru",
+        "ydx-stat.ru",
+        "browser.ydx-stat.ru",
+        "yan-stat.ru",
+        "ya-user-experience.ru",
+        "crash.reporting.u.ya-user-experience.ru",
+        "crash.reporting.t.ya-user-experience.ru",
+        "iwannalove1.ya-user-experience.ru",
+        "gamma.ya-user-experience.ru",
+        "uproxying.ya-user-experience.ru",
+        "yandex-update.ru",
+        "checker.yandex-update.ru",
+        "yandex-tel.tech",
+        "cdn.yadex.tech",
+        "yadex.tech",
+        "yandex-dzen.tech",
+        "mail-ru.tech",
+        "crash.mail-ru.tech"
+      ],
+      "ips": [
+        "2.56.178.66",
+        "109.205.212.241",
+        "45.66.161.182",
+        "2.56.178.172",
+        "2.56.178.160",
+        "2.56.178.208",
+        "2.56.178.62",
+        "194.147.78.132",
+        "95.140.148.120",
+        "45.12.114.51",
+        "45.9.16.85",
+        "171.22.133.159",
+        "45.12.114.23",
+        "45.9.16.59",
+        "45.9.16.51",
+        "45.9.16.40",
+        "141.98.188.228",
+        "45.12.114.32",
+        "95.140.148.146",
+        "82.38.63.88",
+        "194.87.37.14",
+        "80.97.160.191",
+        "45.9.14.77",
+        "46.23.96.49"
+      ]
+    }
+  ]
+}

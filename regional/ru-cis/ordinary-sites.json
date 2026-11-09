@@ -1,0 +1,313 @@
+{
+  "_description": "Страны и сценарии обычных сайтов, проверяемых через config/controls.json. DNS-проверка не означает проверку входа в аккаунт, оплаты или всего браузерного приложения. country — аудитория сервиса, role — назначение. Источники просмотрены 2026-11-09.",
+  "records": [
+    {
+      "country": "KZ",
+      "role": "banking",
+      "domain": "halykbank.kz",
+      "evidence_url": "https://halykbank.kz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KZ",
+      "role": "government",
+      "domain": "egov.kz",
+      "evidence_url": "https://egov.kz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KZ",
+      "role": "login",
+      "domain": "idp.egov.kz",
+      "evidence_url": "https://idp.egov.kz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KZ",
+      "role": "marketplace",
+      "domain": "kaspi.kz",
+      "evidence_url": "https://kaspi.kz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KZ",
+      "role": "media",
+      "domain": "tengrinews.kz",
+      "evidence_url": "https://tengrinews.kz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "BY",
+      "role": "banking",
+      "domain": "belarusbank.by",
+      "evidence_url": "https://belarusbank.by/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "BY",
+      "role": "government",
+      "domain": "president.gov.by",
+      "evidence_url": "https://president.gov.by/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "BY",
+      "role": "login",
+      "domain": "portal.gov.by",
+      "evidence_url": "https://portal.gov.by/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "BY",
+      "role": "marketplace",
+      "domain": "onliner.by",
+      "evidence_url": "https://onliner.by/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "BY",
+      "role": "media",
+      "domain": "belta.by",
+      "evidence_url": "https://belta.by/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "UZ",
+      "role": "banking",
+      "domain": "nbu.uz",
+      "evidence_url": "https://nbu.uz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "UZ",
+      "role": "government",
+      "domain": "my.gov.uz",
+      "evidence_url": "https://my.gov.uz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "UZ",
+      "role": "login",
+      "domain": "id.egov.uz",
+      "evidence_url": "https://id.egov.uz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "UZ",
+      "role": "marketplace",
+      "domain": "uzum.uz",
+      "evidence_url": "https://uzum.uz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "UZ",
+      "role": "media",
+      "domain": "kun.uz",
+      "evidence_url": "https://kun.uz/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KG",
+      "role": "banking",
+      "domain": "mbank.kg",
+      "evidence_url": "https://mbank.kg/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KG",
+      "role": "government",
+      "domain": "gov.kg",
+      "evidence_url": "https://gov.kg/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KG",
+      "role": "login",
+      "domain": "portal.tunduk.kg",
+      "evidence_url": "https://portal.tunduk.kg/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KG",
+      "role": "marketplace",
+      "domain": "lalafo.kg",
+      "evidence_url": "https://lalafo.kg/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "KG",
+      "role": "media",
+      "domain": "24.kg",
+      "evidence_url": "https://24.kg/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AM",
+      "role": "banking",
+      "domain": "ameriabank.am",
+      "evidence_url": "https://ameriabank.am/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AM",
+      "role": "government",
+      "domain": "gov.am",
+      "evidence_url": "https://gov.am/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AM",
+      "role": "login",
+      "domain": "yesem.am",
+      "evidence_url": "https://yesem.am/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AM",
+      "role": "marketplace",
+      "domain": "list.am",
+      "evidence_url": "https://list.am/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AM",
+      "role": "media",
+      "domain": "armenpress.am",
+      "evidence_url": "https://armenpress.am/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AZ",
+      "role": "banking",
+      "domain": "abb-bank.az",
+      "evidence_url": "https://abb-bank.az/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AZ",
+      "role": "government",
+      "domain": "e-gov.az",
+      "evidence_url": "https://e-gov.az/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AZ",
+      "role": "login",
+      "domain": "asanlogin.my.gov.az",
+      "evidence_url": "https://asanlogin.my.gov.az/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AZ",
+      "role": "marketplace",
+      "domain": "tap.az",
+      "evidence_url": "https://tap.az/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "AZ",
+      "role": "media",
+      "domain": "azertag.az",
+      "evidence_url": "https://azertag.az/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TJ",
+      "role": "banking",
+      "domain": "alif.tj",
+      "evidence_url": "https://alif.tj/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TJ",
+      "role": "government",
+      "domain": "president.tj",
+      "evidence_url": "https://president.tj/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TJ",
+      "role": "login",
+      "domain": "online.alif.tj",
+      "evidence_url": "https://online.alif.tj/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TJ",
+      "role": "marketplace",
+      "domain": "somon.tj",
+      "evidence_url": "https://somon.tj/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TJ",
+      "role": "media",
+      "domain": "khovar.tj",
+      "evidence_url": "https://khovar.tj/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TM",
+      "role": "banking",
+      "domain": "senagatbank.com.tm",
+      "evidence_url": "https://senagatbank.com.tm/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TM",
+      "role": "government",
+      "domain": "e.gov.tm",
+      "evidence_url": "https://e.gov.tm/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TM",
+      "role": "login",
+      "domain": "e.gov.tm",
+      "evidence_url": "https://e.gov.tm/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "TM",
+      "role": "media",
+      "domain": "turkmenportal.com",
+      "evidence_url": "https://turkmenportal.com/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "MD",
+      "role": "banking",
+      "domain": "maib.md",
+      "evidence_url": "https://maib.md/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "MD",
+      "role": "government",
+      "domain": "gov.md",
+      "evidence_url": "https://gov.md/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "MD",
+      "role": "login",
+      "domain": "mpass.gov.md",
+      "evidence_url": "https://mpass.gov.md/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "MD",
+      "role": "marketplace",
+      "domain": "999.md",
+      "evidence_url": "https://999.md/",
+      "reviewed_on": "2026-11-09"
+    },
+    {
+      "country": "MD",
+      "role": "media",
+      "domain": "moldpres.md",
+      "evidence_url": "https://moldpres.md/",
+      "reviewed_on": "2026-11-09"
+    }
+  ]
+}

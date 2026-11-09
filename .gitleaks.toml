@@ -1,0 +1,11 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Доменные списки поставщиков и локальные рабочие каталоги"
+paths = [
+  '''^output/(adguard|threat-intel)/.*\.txt$''',
+  '''^\.cache/''',
+  '''^\.venv/''',
+  '''^info/'''
+]

@@ -1,36 +1,18 @@
----
-name: My issue is not listed
-description: This form is to ask about issues not listed, after checking with our Support Team
-labels: 
-  - support
-  - report
-  
+name: Предложение источника или правила
+description: Новый источник или подтверждённый домен для разрешённых категорий.
+labels: [report]
 body:
-
-  - type: markdown
-    attributes:
-      value: Thank you for wanting to help us improve our DNS services by reporting issues.
-
-  - type: checkboxes
-    id: asked-support-team
-    attributes:
-      label: Have you contacted the Support Team already?
-      description: >
-        The optimal course of action is to contact our Support Team by email.
-        Please ensure you have contacted them them directly first - https://mullvad.net/help
-      options:
-        - label: I have attempted already, but to no avail, or they pointed me here.
-          required: true
-
   - type: textarea
-    id: issues-experienced
+    id: evidence
     attributes:
-      label: What are the issues you need support with?
+      label: Источник и доказательство
+      description: URL источника, категория, лицензия и дата наблюдения. География сама по себе не основание.
     validations:
       required: true
-
   - type: textarea
-    id: additional
+    id: scope
     attributes:
-      label: Additional Information
-      description: Is there any additional information that you can provide?
+      label: Область правила и возможные ложные блокировки
+      description: Только указанное имя (exact) или вместе с поддоменами (suffix); какие обычные сайты могут пострадать.
+    validations:
+      required: true

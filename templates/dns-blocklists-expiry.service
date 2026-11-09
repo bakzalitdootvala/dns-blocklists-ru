@@ -1,0 +1,16 @@
+# Снятие истёкших C2-блоков в установленном combined.txt и кэше AdGuard.
+# Запускается timer; без истёкших записей служба DNS не перезапускается.
+# Перед использованием сверить пути, имя службы и локальный DNS-порт.
+[Unit]
+Description=Удаление истёкших региональных C2-правил AdGuard
+After=AdGuardHome.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/dns-blocklists-ru/scripts/expire_filter.py --source /opt/dns-blocklists-ru/combined.txt --cache /opt/AdGuardHome/data/filters/987654322.txt
+TimeoutStartSec=300
+MemoryMax=1G
+CPUQuota=50%
+UMask=0077
+PrivateTmp=true
+NoNewPrivileges=true

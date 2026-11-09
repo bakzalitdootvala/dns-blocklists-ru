@@ -1,0 +1,21 @@
+{
+  "id": "hagezi-ips",
+  "file": "hagezi-ips-cb6dfce84b8f86611ca428e6b6994f7499fcb32e.txt",
+  "sha256": "ea64d8d9f044e1eeb39031a7d69195c7e18cbce64ea9b086aff1f3703ea6569b",
+  "repository": "hagezi/dns-blocklists",
+  "commit": "cb6dfce84b8f86611ca428e6b6994f7499fcb32e",
+  "commit_at": "2026-11-09T15:54:25Z",
+  "retrieved_at": "2026-11-09T16:29:44+00:00",
+  "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/cb6dfce84b8f86611ca428e6b6994f7499fcb32e/ips/tif.txt",
+  "bytes": 507566,
+  "license": "GPL-3.0",
+  "network_count": 35559,
+  "artifact_sha256": "9ad5952cfb62a87ae3034c54cac5dcebc3370a2686074ae76ef1311d5fc231c1",
+  "excluded_nonpublic_or_invalid": [
+    "100.83.3.144",
+    "100.121.51.8",
+    "247.16.181.135"
+  ],
+  "per_indicator_last_seen": null,
+  "enforcement": "dns_response"
+}
