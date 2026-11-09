@@ -1,5 +1,5 @@
 # Source: HaGeZi TIF; GPL-3.0
-# Retrieved: 2026-11-09T16:29:44+00:00
+# Retrieved: 2026-11-09T22:50:53+00:00
 # Source commit: cb6dfce84b8f86611ca428e6b6994f7499fcb32e
 # Per-indicator last_seen: unknown; enforcement: dns_response
 1.0.218.230/32

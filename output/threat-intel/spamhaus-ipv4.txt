@@ -1,7 +1,7 @@
 # Source: Spamhaus DROP
 # (c) 2026 The Spamhaus Project SLU
 # Terms: https://www.spamhaus.org/drop/terms/
-# Source timestamp: 1794239042 (2026-11-09T15:44:02+00:00)
+# Source timestamp: 1794262442 (2026-11-09T22:14:02+00:00)
 # Назначение: проверка IP в DNS-ответах; firewall не изменяется.
 1.10.16.0/20
 1.19.0.0/16

@@ -1,14 +1,14 @@
 {
   "type": "metadata",
-  "timestamp": 1794240842,
+  "timestamp": 1794264242,
   "size": 5676,
   "records": 90,
   "copyright": "(c) 2026 The Spamhaus Project SLU",
   "terms": "https://www.spamhaus.org/drop/terms/",
-  "source_published_at": "2026-11-09T16:14:02+00:00",
+  "source_published_at": "2026-11-09T22:44:02+00:00",
   "enforcement": "dns_response",
   "network_count": 90,
   "additional_evidence_records": 0,
-  "artifact_sha256": "9ef55de47ce33c5d8e5e0ad54428bdc49ad101bc5bfad7d4817293c81df22120",
-  "source_sha256": "e08147d3cffcbda8639fae05da2a61cfda5258ef4a4a5f03a5b109447b381e3c"
+  "artifact_sha256": "99d1807a36e8f529a8eb5701e7891af4b75238f81457381c189a6e81be9000c3",
+  "source_sha256": "df9a7d2c034d93b0ea4a717be6689bd0a3b1058b05a5dcc8c8862c702bb36bfb"
 }

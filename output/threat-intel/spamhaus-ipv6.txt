@@ -1,7 +1,7 @@
 # Source: Spamhaus DROP
 # (c) 2026 The Spamhaus Project SLU
 # Terms: https://www.spamhaus.org/drop/terms/
-# Source timestamp: 1794240842 (2026-11-09T16:14:02+00:00)
+# Source timestamp: 1794264242 (2026-11-09T22:44:02+00:00)
 # Назначение: проверка IP в DNS-ответах; firewall не изменяется.
 2001:43f8:a21::/48
 2001:678:11b8::/48
