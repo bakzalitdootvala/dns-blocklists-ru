@@ -74,7 +74,7 @@ jobs:
           python - <<'PYEXTRACT'
           import pathlib, tarfile
           with tarfile.open('.cache/adguard/release.tar.gz') as archive:
-              member = archive.getmember('AdGuardHome/AdGuardHome')
+              member = archive.getmember('./AdGuardHome/AdGuardHome')
               if not member.isfile() or member.size > 100_000_000:
                   raise ValueError('Недопустимый бинарник в архиве')
               binary = pathlib.Path('.cache/adguard/AdGuardHome')
