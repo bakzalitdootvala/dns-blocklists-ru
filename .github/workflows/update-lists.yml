@@ -1,5 +1,5 @@
 # Назначение: выпустить новый combined.txt с доменными и IP-правилами.
-# Запуск: ежедневно в 14:03 UTC (17:03 по Москве) или вручную через workflow_dispatch.
+# Запуск: ежедневно в 06:23 UTC (09:23 по Москве) или вручную через workflow_dispatch.
 # Работает только в bakzalitdootvala/dns-blocklists-ru; две публикации не идут одновременно.
 # Сначала проверяет код, затем обновляет удалённую maintainer до upstream main без force.
 # Получает все обязательные источники Mullvad/HaGeZi/Spamhaus и проверяет DROP через ClamAV.
@@ -13,7 +13,7 @@ name: Обновить источники и опубликовать DNS-фил
 
 on:
   schedule:
-    - cron: '3 14 * * *'
+    - cron: '23 6 * * *'
   workflow_dispatch:
 
 permissions:
